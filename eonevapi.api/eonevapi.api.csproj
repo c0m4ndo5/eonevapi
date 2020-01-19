@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\eonevapi.core\eonevapi.core.csproj" />
+    <ProjectReference Include="..\eonevapi.data\eonevapi.data.csproj" />
+    <ProjectReference Include="..\eonevapi.services\eonevapi.services.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+</Project>
