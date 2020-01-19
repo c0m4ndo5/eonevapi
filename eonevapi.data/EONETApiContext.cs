@@ -1,23 +1,28 @@
 using System;
 using System.Net.Http;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace eonevapi.data
 {
     public interface IEONETApiContext : IDisposable
     {
-        JsonDocument CallAPI(string endpoint);
+        Task<JsonDocument> CallAPI(string endpoint);
     }
     public class EONETApiContext : IEONETApiContext
     {
         HttpClient client;
-        public EONETApiContext(HttpMessageHandler messageHandler)
+        string baseUrl;
+        public EONETApiContext(HttpMessageHandler messageHandler, string baseUrl)
         {
             client = new HttpClient(messageHandler);
+            this.baseUrl = baseUrl;
         }
-        public JsonDocument CallAPI(string endpoint)
+        public async Task<JsonDocument> CallAPI(string endpoint)
         {
-            throw new System.NotImplementedException();
+            var result = await client.GetAsync(baseUrl + endpoint);
+            var stringContent = await result.Content.ReadAsStringAsync();
+            return JsonDocument.Parse(stringContent);
         }
 
         public void Dispose()

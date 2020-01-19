@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading.Tasks;
 using eonevapi.core.Models;
 using eonevapi.core.Repositories;
@@ -15,17 +16,38 @@ namespace eonevapi.data.Repositories
         }
         public async Task<IEnumerable<Event>> GetAll()
         {
-            throw new NotImplementedException();
+            JsonDocument result = await apiContext.CallAPI("events");
+
+            return (IEnumerable<Event>)JsonSerializer.Deserialize(result.RootElement.GetProperty("events").ToString(),
+            typeof(IEnumerable<Event>));
         }
 
-        public async Task<Event> GetById(int id)
+        public async Task<Event> GetById(string id)
         {
-            throw new NotImplementedException();
+            JsonDocument result = await apiContext.CallAPI("events/" + id);
+
+            return (Event)JsonSerializer.Deserialize(result.RootElement.ToString(),
+            typeof(Event));
         }
 
-        public async Task<IEnumerable<Event>> GetFiltered(DateTime start, DateTime end, string status, int category)
+        public async Task<IEnumerable<Event>> GetFiltered(string status, int days = -1, int category = -1)
         {
-            throw new NotImplementedException();
+            string url = "";
+            if (category >= 0)
+                url += "categories/" + category;
+            else
+                url += "events";
+            if (days >= 0 || category >= 0)
+            {
+                url += "?";
+                if (days >= 0)
+                    url += "days=" + days;
+                if (category >= 0)
+                    url += "category=" + category;
+            }
+            JsonDocument result = await apiContext.CallAPI(url);
+            return (IEnumerable<Event>)JsonSerializer.Deserialize(result.RootElement.GetProperty("events").ToString(),
+            typeof(IEnumerable<Event>));
         }
     }
 }

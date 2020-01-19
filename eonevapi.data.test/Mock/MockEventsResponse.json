@@ -1,0 +1,327 @@
+{
+  "title": "EONET Events",
+  "description": "Natural events from EONET.",
+  "link": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events",
+  "events": [
+    {
+      "id": "EONET_4557",
+      "title": "Wildfire - Angol Commune, Chile",
+      "description": "",
+      "link": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events/EONET_4557",
+      "categories": [
+        {
+          "id": 8,
+          "title": "Wildfires"
+        }
+      ],
+      "sources": [
+        {
+          "id": "PDC",
+          "url": "http://emops.pdc.org/emops/?hazard_id=101738"
+        }
+      ],
+      "geometries": [
+        {
+          "date": "2020-01-17T19:33:00Z",
+          "type": "Point",
+          "coordinates": [-72.69914, -37.80482]
+        }
+      ]
+    },
+    {
+      "id": "EONET_2882",
+      "title": "Iceberg B43",
+      "description": "",
+      "link": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events/EONET_2882",
+      "categories": [
+        {
+          "id": 15,
+          "title": "Sea and Lake Ice"
+        }
+      ],
+      "sources": [
+        {
+          "id": "NATICE",
+          "url": "http://www.natice.noaa.gov/pub/icebergs/Iceberg_Tabular.csv"
+        }
+      ],
+      "geometries": [
+        {
+          "date": "2017-04-21T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-107.44, -74.5]
+        },
+        {
+          "date": "2017-08-25T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-107.26, -74.05]
+        },
+        {
+          "date": "2017-12-29T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-108.35, -73.57]
+        },
+        {
+          "date": "2018-02-23T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-108.34, -73.07]
+        },
+        {
+          "date": "2018-03-23T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-108.77, -72.59]
+        },
+        {
+          "date": "2018-04-13T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-110.3, -72.48]
+        },
+        {
+          "date": "2018-04-20T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-111.79, -72.31]
+        },
+        {
+          "date": "2018-06-22T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-113.53, -72.24]
+        },
+        {
+          "date": "2018-07-13T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-116.03, -72.62]
+        },
+        {
+          "date": "2018-07-20T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-114.46, -72.76]
+        },
+        {
+          "date": "2018-08-10T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-116.91, -72.7]
+        },
+        {
+          "date": "2018-08-17T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-118.23, -72.47]
+        },
+        {
+          "date": "2018-08-31T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-120.64, -72.27]
+        },
+        {
+          "date": "2018-09-07T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-122.3, -72.22]
+        },
+        {
+          "date": "2018-09-21T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-124.67, -72.14]
+        },
+        {
+          "date": "2018-10-19T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-126.43, -72.29]
+        },
+        {
+          "date": "2018-11-02T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-127.74, -72.52]
+        },
+        {
+          "date": "2018-11-23T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-128.23, -73.0]
+        },
+        {
+          "date": "2018-11-30T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-129.74, -73.28]
+        },
+        {
+          "date": "2018-12-21T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-131.5, -73.41]
+        },
+        {
+          "date": "2019-01-25T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-136.45, -73.43]
+        },
+        {
+          "date": "2019-03-15T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-139.96, -73.97]
+        },
+        {
+          "date": "2019-03-22T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-143.0, -74.04]
+        },
+        {
+          "date": "2019-03-29T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-144.55, -74.52]
+        },
+        {
+          "date": "2019-04-12T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-146.89, -74.64]
+        },
+        {
+          "date": "2019-05-03T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-150.32, -75.1]
+        },
+        {
+          "date": "2019-05-10T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-151.72, -75.39]
+        },
+        {
+          "date": "2019-05-24T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-154.28, -75.82]
+        },
+        {
+          "date": "2019-06-07T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-157.49, -76.15]
+        },
+        {
+          "date": "2019-06-14T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-159.34, -76.4]
+        },
+        {
+          "date": "2019-07-12T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-162.46, -76.6]
+        },
+        {
+          "date": "2019-07-26T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-162.3, -75.86]
+        },
+        {
+          "date": "2019-08-09T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-165.53, -75.33]
+        },
+        {
+          "date": "2019-08-23T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-167.54, -75.26]
+        },
+        {
+          "date": "2019-09-13T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-169.66, -74.88]
+        },
+        {
+          "date": "2019-09-27T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-171.04, -74.18]
+        },
+        {
+          "date": "2019-10-18T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-171.56, -73.26]
+        },
+        {
+          "date": "2019-11-01T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-172.83, -72.82]
+        },
+        {
+          "date": "2019-11-22T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-172.73, -72.36]
+        },
+        {
+          "date": "2019-12-06T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-172.05, -71.96]
+        },
+        {
+          "date": "2020-01-17T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-173.52, -71.8]
+        }
+      ]
+    },
+    {
+      "id": "EONET_2998",
+      "title": "Iceberg A68B",
+      "description": "",
+      "link": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events/EONET_2998",
+      "categories": [
+        {
+          "id": 15,
+          "title": "Sea and Lake Ice"
+        }
+      ],
+      "sources": [
+        {
+          "id": "NATICE",
+          "url": "http://www.natice.noaa.gov/pub/icebergs/Iceberg_Tabular.csv"
+        }
+      ],
+      "geometries": [
+        {
+          "date": "2017-07-21T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-60.81, -67.25]
+        },
+        {
+          "date": "2017-12-15T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-59.6, -66.92]
+        },
+        {
+          "date": "2018-07-13T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-59.58, -66.36]
+        },
+        {
+          "date": "2018-08-31T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-58.87, -65.94]
+        },
+        {
+          "date": "2018-11-16T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-57.43, -65.85]
+        },
+        {
+          "date": "2018-11-23T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-58.28, -65.54]
+        },
+        {
+          "date": "2019-01-25T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-58.55, -65.04]
+        },
+        {
+          "date": "2019-03-01T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-59.89, -64.76]
+        },
+        {
+          "date": "2019-05-17T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-58.88, -64.61]
+        },
+        {
+          "date": "2020-01-17T00:00:00Z",
+          "type": "Point",
+          "coordinates": [-57.8, -64.67]
+        }
+      ]
+    }
+  ]
+}

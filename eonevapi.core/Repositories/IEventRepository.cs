@@ -8,7 +8,7 @@ namespace eonevapi.core.Repositories
     public interface IEventRepository //: IRepository<Event>
     {
         Task<IEnumerable<Event>> GetAll();
-        Task<Event> GetById(int id);
-        Task<IEnumerable<Event>> GetFiltered(DateTime start, DateTime end, string status, int category);
+        Task<Event> GetById(string id);
+        Task<IEnumerable<Event>> GetFiltered(string status, int days, int category);
     }
 }

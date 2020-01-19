@@ -1,0 +1,80 @@
+{
+  "id": "EONET_4545",
+  "title": "Tropical Cyclone Blake",
+  "description": "",
+  "link": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/events/EONET_4545",
+  "closed": "2020-01-12T00:00:00Z",
+  "categories": [
+    {
+      "id": 10,
+      "title": "Severe Storms"
+    }
+  ],
+  "sources": [
+    {
+      "id": "GDACS",
+      "url": "https://www.gdacs.org/Cyclones/report.aspx?eventid=1000644&amp;eventtype=TC"
+    },
+    {
+      "id": "JTWC",
+      "url": "http://www.metoc.navy.mil/jtwc/products/sh0620.tcw"
+    }
+  ],
+  "geometries": [
+    {
+      "date": "2020-01-05T00:00:00Z",
+      "type": "Point",
+      "coordinates": [121.3, -16.0]
+    },
+    {
+      "date": "2020-01-05T06:00:00Z",
+      "type": "Point",
+      "coordinates": [121.3, -15.2]
+    },
+    {
+      "date": "2020-01-05T12:00:00Z",
+      "type": "Point",
+      "coordinates": [121.2, -15.4]
+    },
+    {
+      "date": "2020-01-05T18:00:00Z",
+      "type": "Point",
+      "coordinates": [121.3, -15.7]
+    },
+    {
+      "date": "2020-01-06T00:00:00Z",
+      "type": "Point",
+      "coordinates": [121.9, -15.9]
+    },
+    {
+      "date": "2020-01-06T06:00:00Z",
+      "type": "Point",
+      "coordinates": [122.2, -16.7]
+    },
+    {
+      "date": "2020-01-06T12:00:00Z",
+      "type": "Point",
+      "coordinates": [122, -17.4]
+    },
+    {
+      "date": "2020-01-06T18:00:00Z",
+      "type": "Point",
+      "coordinates": [121.8, -17.9]
+    },
+    {
+      "date": "2020-01-07T00:00:00Z",
+      "type": "Point",
+      "coordinates": [121.7, -18.3]
+    },
+    {
+      "date": "2020-01-07T06:00:00Z",
+      "type": "Point",
+      "coordinates": [121.2, -18.7]
+    },
+    {
+      "date": "2020-01-07T12:00:00Z",
+      "type": "Point",
+      "coordinates": [121, -19.5]
+    }
+  ]
+}

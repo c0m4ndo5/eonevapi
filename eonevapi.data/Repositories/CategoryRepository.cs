@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading.Tasks;
 using eonevapi.core.Models;
 using eonevapi.core.Repositories;
@@ -14,7 +15,10 @@ namespace eonevapi.data.Repositories
         }
         public async Task<IEnumerable<Category>> GetAll()
         {
-            throw new System.NotImplementedException();
+            JsonDocument result = await apiContext.CallAPI("categories");
+
+            return (IEnumerable<Category>)JsonSerializer.Deserialize(result.RootElement.GetProperty("categories").ToString(),
+            typeof(IEnumerable<Category>));
         }
     }
 }

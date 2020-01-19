@@ -1,0 +1,21 @@
+{
+  "title": "EONET Event Categories",
+  "description": "List of all the available event categories in the EONET system",
+  "link": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories",
+  "categories": [
+    {
+      "id": 6,
+      "title": "Drought",
+      "link": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories/6",
+      "description": "Long lasting absence of precipitation affecting agriculture and livestock, and the overall availability of food and water.",
+      "layers": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/layers/6"
+    },
+    {
+      "id": 7,
+      "title": "Dust and Haze",
+      "link": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories/7",
+      "description": "Related to dust storms, air pollution and other non-volcanic aerosols. Volcano-related plumes shall be included with the originating eruption event.",
+      "layers": "https://eonet.sci.gsfc.nasa.gov/api/v2.1/layers/7"
+    }
+  ]
+}
