@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eonevapi.services", "eoneva
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eonevapi.data.test", "eonevapi.data.test\eonevapi.data.test.csproj", "{4C8E4659-9B16-41B5-A02A-17128F85C752}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eonevapi.services.test", "eonevapi.services.test\eonevapi.services.test.csproj", "{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,5 +88,17 @@ Global
 		{4C8E4659-9B16-41B5-A02A-17128F85C752}.Release|x64.Build.0 = Release|Any CPU
 		{4C8E4659-9B16-41B5-A02A-17128F85C752}.Release|x86.ActiveCfg = Release|Any CPU
 		{4C8E4659-9B16-41B5-A02A-17128F85C752}.Release|x86.Build.0 = Release|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Debug|x64.Build.0 = Debug|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Debug|x86.Build.0 = Debug|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Release|x64.ActiveCfg = Release|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Release|x64.Build.0 = Release|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Release|x86.ActiveCfg = Release|Any CPU
+		{3C0F76E5-B3F9-49C0-AB7D-6248C9370954}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
