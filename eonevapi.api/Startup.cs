@@ -45,7 +45,9 @@ namespace eonevapi.api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
+
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseRouting();
 

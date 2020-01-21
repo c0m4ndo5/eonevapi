@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using eonevapi.api.Mapping;
 using eonevapi.api.Validators;
 using eonevapi.core.Models;
 using eonevapi.core.QueryOptions;
 using eonevapi.core.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Linq;
+using eonevapi.api.Resources;
 
 namespace eonevapi.api.Controllers
 {
@@ -23,7 +26,7 @@ namespace eonevapi.api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Event>>> GetEvents(DateTime? from, DateTime? to, string status, int category, string orderby)
+        public async Task<ActionResult<IEnumerable<EventResource>>> GetEvents(DateTime? from, DateTime? to, string status, int category, string orderby)
         {
             EventQueryOptionsValidator validator = new EventQueryOptionsValidator();
             EventQueryOptions options = validator.validate(from, to, status, category, orderby);
@@ -31,7 +34,10 @@ namespace eonevapi.api.Controllers
             if (options == null) return BadRequest("Invalid query options");
             else
             {
-                return Ok(await eventService.GetFiltered(options));//Error handling
+                var queryResult = await eventService.GetFiltered(options);
+                EventResourceMapper mapper = new EventResourceMapper();
+                var resourceReturn = mapper.mapToResourceList(queryResult);
+                return Ok(resourceReturn);//Error handling
             }
         }
     }
