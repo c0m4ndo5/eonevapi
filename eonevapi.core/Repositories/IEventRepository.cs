@@ -5,7 +5,8 @@ using eonevapi.core.Models;
 
 namespace eonevapi.core.Repositories
 {
-    public interface IEventRepository //: IRepository<Event>
+    //Define available methods for events, in this case retrieval only
+    public interface IEventRepository
     {
         Task<IEnumerable<Event>> GetAll();
         Task<Event> GetById(string id);

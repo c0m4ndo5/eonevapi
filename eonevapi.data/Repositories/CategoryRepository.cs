@@ -6,6 +6,8 @@ using eonevapi.core.Repositories;
 
 namespace eonevapi.data.Repositories
 {
+    //Responsible for initiating the API call to get categories available and return the respective model
+    //In this case there are no further filters
     public class CategoryRepository : ICategoryRepository
     {
         IEONETApiContext apiContext;

@@ -4,7 +4,8 @@ using eonevapi.core.Models;
 
 namespace eonevapi.core.Repositories
 {
-    public interface ICategoryRepository// : IRepository<Category>
+    //Define available methods for categories, in this case retrieval of all categories only
+    public interface ICategoryRepository
     {
         Task<IEnumerable<Category>> GetAll();
     }

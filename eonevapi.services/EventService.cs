@@ -9,6 +9,9 @@ using eonevapi.core.Services;
 
 namespace eonevapi.services
 {
+    //Utilize the UnitOfWork and it's repositories to retrieve events
+    //This class is also responsible for doing internal business logic
+    //Per requirements, this means filtering and ordering the data according to input
     public class EventService : IEventService
     {
         IUnitOfWork unitOfWork;
@@ -35,7 +38,7 @@ namespace eonevapi.services
         }
         public async Task<IEnumerable<Event>> GetFiltered(EventQueryOptions queryOptions)
         {
-            int daysToQuery = 30;
+            int daysToQuery = -1;
             if (queryOptions.SearchStart != null)
             {
                 var start = (DateTime)queryOptions.SearchStart;
@@ -45,7 +48,20 @@ namespace eonevapi.services
             var queryResult = await unitOfWork.eventRepository.GetFiltered(queryOptions.FilterStatus, daysToQuery, queryOptions.FilterCategory);
             if (queryOptions.SearchEnd != null)
             {
-                queryResult = queryResult.Where(e => e.closed != new DateTime() && e.closed < queryOptions.SearchEnd);
+                queryResult = queryResult.Where(e =>
+                {
+                    if (e.closed != DateTime.MinValue)
+                    {
+                        return e.closed < queryOptions.SearchEnd;
+                    }
+                    else
+                    {
+                        if (e.geometries.Count() > 0)
+                            return e.geometries.ElementAt(0).date < queryOptions.SearchEnd;
+                        else
+                            return false;
+                    }
+                });
             }
             //Filter in the order of priority of the SortingOptions list order
             if (queryOptions.SortingOptions != null)
@@ -80,7 +96,9 @@ namespace eonevapi.services
                 }
 
             }
-            return queryResult;
+            //Hard limit of 50 so as to not display too many items
+            //A better approach for a future version would be to develop pagination
+            return queryResult.Take(50);
         }
     }
 }

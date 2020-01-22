@@ -7,7 +7,9 @@ namespace eonevapi.api.Validators
     {
         public EventQueryOptions validate(DateTime? from, DateTime? to, string status, int category, string orderby)
         {
-            if (from >= to) return null;
+            //Simply convert from incoming URL parameters to the query options expected by the data service
+            //Ensure the options are valid for the service
+            if (from >= to) throw new Exception("Invalid date selection");
 
             EventQueryOptions options = new EventQueryOptions()
             {
@@ -23,7 +25,7 @@ namespace eonevapi.api.Validators
                 if (orderby.StartsWith("date")) orderingOptions = EventOrderingOptions.OrderByDate;
                 if (orderby.StartsWith("category")) orderingOptions = EventOrderingOptions.OrderByCategory;
                 if (orderby.StartsWith("status")) orderingOptions = EventOrderingOptions.OrderByStatus;
-                if (orderby.EndsWith("Desc")) direction = OrderingDirection.DESC;
+                if (orderby.EndsWith("desc")) direction = OrderingDirection.DESC;
                 options.SortingOptions = new OrderingOptions()
                 {
                     OrderingOption = orderingOptions,

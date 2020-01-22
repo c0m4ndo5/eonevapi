@@ -3,6 +3,7 @@ using eonevapi.data.Repositories;
 
 namespace eonevapi.data
 {
+    //The unit of work puts together the repositories available for this application in one class
     public class UnitOfWork : IUnitOfWork
     {
         IEONETApiContext apiContext;

@@ -7,6 +7,8 @@ using eonevapi.core.Repositories;
 
 namespace eonevapi.data.Repositories
 {
+    //Responsible for initiating the call to get events and return the appropriate models
+    //It is responsible for also getting and sending the appropriate filters specific to the api call
     public class EventRepository : IEventRepository
     {
         IEONETApiContext apiContext;
@@ -37,14 +39,17 @@ namespace eonevapi.data.Repositories
                 url += "categories/" + category;
             else
                 url += "events";
-            if (days >= 0 || category >= 0)
+            if (days >= 0 || category >= 0 || status == "closed")
             {
                 url += "?";
                 if (days >= 0)
-                    url += "days=" + days;
+                    url += "days=" + days + "&";
                 if (category >= 0)
-                    url += "category=" + category;
+                    url += "category=" + category + "&";
+                if (status == "closed")
+                    url += "status=" + status;
             }
+            if (url.EndsWith("&")) url = url.Substring(0, url.Length - 1);
             JsonDocument result = await apiContext.CallAPI(url);
             return (IEnumerable<Event>)JsonSerializer.Deserialize(result.RootElement.GetProperty("events").ToString(),
             typeof(IEnumerable<Event>));

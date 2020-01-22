@@ -25,19 +25,40 @@ namespace eonevapi.api.Controllers
             this.eventService = eventService;
         }
 
+        /// <summary>
+        /// Gets a list of all events matching filters and sorting provided, up to a limit of 50
+        /// </summary>
+        /// <param name="from">Search from date (example 2019-12-01)</param>
+        /// <param name="to">Search to date (example 2019-12-31)</param>
+        /// <param name="status">Search for open/closed events only (if empty, open is used by default)</param>
+        /// <param name="category">Show events in one specific category (example 8, which is Wildfires)</param>
+        /// <param name="orderby">Order by status/category/date (example: statusAsc)</param>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EventResource>>> GetEvents(DateTime? from, DateTime? to, string status, int category, string orderby)
         {
+            //Validate incoming request options and return a query options object
             EventQueryOptionsValidator validator = new EventQueryOptionsValidator();
             EventQueryOptions options = validator.validate(from, to, status, category, orderby);
 
             if (options == null) return BadRequest("Invalid query options");
             else
             {
-                var queryResult = await eventService.GetFiltered(options);
-                EventResourceMapper mapper = new EventResourceMapper();
-                var resourceReturn = mapper.mapToResourceList(queryResult);
-                return Ok(resourceReturn);//Error handling
+                try
+                {
+                    //Retrieve events according to filter
+                    var queryResult = await eventService.GetFiltered(options);
+                    //Use a mapper to return a friendly format for the front-end
+                    //On a larger project with more models, use of a library such as AutoMapper might be more convenient
+                    EventResourceMapper mapper = new EventResourceMapper();
+                    var resourceReturn = mapper.mapToResourceList(queryResult);
+                    return Ok(resourceReturn);
+                }
+                catch (Exception e)
+                {
+                    logger.LogError(e, "Error retrieving events");
+                    return StatusCode(500, "Error retrieving events");
+                }
+
             }
         }
     }

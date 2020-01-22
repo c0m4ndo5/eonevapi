@@ -6,6 +6,7 @@ using eonevapi.core.Services;
 
 namespace eonevapi.services
 {
+    //Utilize the unit of work and it's repositories to get categories available
     public class CategoryService : ICategoryService
     {
         IUnitOfWork unitOfWork;

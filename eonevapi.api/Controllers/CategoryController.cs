@@ -20,10 +20,21 @@ namespace eonevapi.api.Controllers
             this.categoryService = categoryService;
         }
 
+        /// <summary>
+        /// Gets a list of all available categories
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetAllCategories()
         {
-            return Ok(await categoryService.GetAllCategories());//TODO Error handling
+            try
+            {
+                return Ok(await categoryService.GetAllCategories());
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error retrieving all categories");
+                return StatusCode(500, "Error retrieving available categories");
+            }
         }
     }
 }

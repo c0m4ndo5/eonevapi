@@ -6,6 +6,7 @@ using eonevapi.core.QueryOptions;
 
 namespace eonevapi.core.Services
 {
+    //Define available service methods for events
     public interface IEventService
     {
         Task<IEnumerable<Event>> GetAllEvents();

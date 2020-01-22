@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace eonevapi.data
 {
+    //This interface/class is responsible for dealing with the specific logic of calling an API
+    //If the technology changes or specific requirements such as headers and authentication change,
+    //this class needs to be updated
     public interface IEONETApiContext : IDisposable
     {
         Task<JsonDocument> CallAPI(string endpoint);

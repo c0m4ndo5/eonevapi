@@ -10,6 +10,8 @@ namespace eonevapi.api.Mapping
     {
         public EventResource mapToResource(Event e)
         {
+            //Perform a simple mapping from the internal model returned by EONET to a 
+            //more friendly/standard format for the front-end
             DateTime? closed = e.closed;
             if (e.closed == new DateTime())
             {
@@ -23,6 +25,7 @@ namespace eonevapi.api.Mapping
                 description = e.description,
                 link = e.link,
             };
+            //The most recent geometry helps identify a "modified" date for the event and make a map link
             if (e.categories.Count > 0)
                 result.categoryId = e.categories.ElementAt(0).id;
             if (e.geometries.Count > 0)
