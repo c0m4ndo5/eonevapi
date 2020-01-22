@@ -61,5 +61,23 @@ namespace eonevapi.api.Controllers
 
             }
         }
+        /// <summary>
+        /// Gets details of a specific event
+        /// </summary>
+        /// <param name="id">ID of event (example EONET-1234)</param>
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Event>> GetEvent(string id)
+        {
+            try
+            {
+                var result = await eventService.GetById(id);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error retrieving event details");
+                return StatusCode(500, "Error retrieving event details");
+            }
+        }
     }
 }
